@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-20 12:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: classes/models.py:16
+msgid "Class"
+msgstr "Clase"
+
+#: classes/models.py:17
+msgid "Classes"
+msgstr "Clases"
+
+#: classes/models.py:20 schools/models.py:22 students/models.py:21
+msgid "name"
+msgstr "Nombre"
+
+#: idiomactivaAdministration/settings.py:115
+msgid "Spanish"
+msgstr "Español"
+
+#: schools/models.py:16
+msgid "School"
+msgstr "Colegio"
+
+#: schools/models.py:17
+msgid "Schools"
+msgstr "Colegios"
+
+#: schools/models.py:20 students/models.py:29
+msgid "added on"
+msgstr "añadido el"
+
+#: schools/models.py:21 students/models.py:28
+msgid "info"
+msgstr "información"
+
+#: schools/models.py:23 students/models.py:25
+msgid "address"
+msgstr "dirección"
+
+#: schools/models.py:24
+msgid "city"
+msgstr "ciudad"
+
+#: students/models.py:22
+msgid "surname"
+msgstr "1er apellido"
+
+#: students/models.py:23
+msgid "surname b"
+msgstr "2º apellido"
+
+#: students/models.py:24
+msgid "age"
+msgstr "edad"
+
+#: students/models.py:26
+msgid "phone"
+msgstr "teléfono"
+
+#: students/models.py:27
+msgid "email"
+msgstr "email"
+
+#: students/models.py:38
+msgid "Adult"
+msgstr "Adulto"
+
+#: students/models.py:39
+msgid "Adults"
+msgstr "Adultos"
+
+#: students/models.py:45
+msgid "Student"
+msgstr "Estudiante"
+
+#: students/models.py:46
+msgid "Students"
+msgstr "Estudiantes"
+
+#: students/models.py:48
+msgid "school"
+msgstr "colegio"
+
+#: students/models.py:49
+msgid "adults"
+msgstr "adultos"
+
+#: students/models.py:50
+msgid "classes"
+msgstr "clases"
+
+#~ msgid "English"
+#~ msgstr "Inglés"
