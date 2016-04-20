@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,107 +16,103 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: classes/models.py:16
 msgid "Class"
-msgstr "Clase"
+msgstr ""
 
 #: classes/models.py:17
 msgid "Classes"
-msgstr "Clases"
+msgstr ""
 
 #: classes/models.py:20 schools/models.py:22 students/models.py:22
 msgid "name"
-msgstr "Nombre"
+msgstr ""
 
 #: classes/models.py:27
 msgid "students"
-msgstr "Estudiantes"
+msgstr ""
 
 #: idiomactivaAdministration/settings.py:115
 msgid "Spanish"
-msgstr "Español"
+msgstr ""
 
 #: schools/models.py:16
 msgid "School"
-msgstr "Colegio"
+msgstr ""
 
 #: schools/models.py:17
 msgid "Schools"
-msgstr "Colegios"
+msgstr ""
 
 #: schools/models.py:20 students/models.py:31
 msgid "added on"
-msgstr "añadido el"
+msgstr ""
 
 #: schools/models.py:21 students/models.py:30
 msgid "info"
-msgstr "información"
+msgstr ""
 
 #: schools/models.py:23 students/models.py:26
 msgid "address"
-msgstr "dirección"
+msgstr ""
 
 #: schools/models.py:24
 msgid "city"
-msgstr "ciudad"
+msgstr ""
 
 #: students/models.py:23
 msgid "surname"
-msgstr "1er apellido"
+msgstr ""
 
 #: students/models.py:24
 msgid "surname b"
-msgstr "2º apellido"
+msgstr ""
 
 #: students/models.py:25
 msgid "date of birth"
-msgstr "fecha de nacimiento"
+msgstr ""
 
 #: students/models.py:27
 msgid "phone"
-msgstr "teléfono"
+msgstr ""
 
 #: students/models.py:28
 msgid "mobile"
-msgstr "movil"
+msgstr ""
 
 #: students/models.py:29
 msgid "email"
-msgstr "email"
+msgstr ""
 
 #: students/models.py:46
 msgid "age"
-msgstr "edad"
+msgstr ""
 
 #: students/models.py:52
 msgid "Adult"
-msgstr "Adulto"
+msgstr ""
 
 #: students/models.py:53
 msgid "Adults"
-msgstr "Adultos"
+msgstr ""
 
 #: students/models.py:59
 msgid "Student"
-msgstr "Estudiante"
+msgstr ""
 
 #: students/models.py:60
 msgid "Students"
-msgstr "Estudiantes"
+msgstr ""
 
 #: students/models.py:62
 msgid "school"
-msgstr "colegio"
+msgstr ""
 
 #: students/models.py:63
 msgid "adults"
-msgstr "adultos"
+msgstr ""
 
 #: students/models.py:64 students/models.py:69
 msgid "classes"
-msgstr "clases"
-
-#~ msgid "English"
-#~ msgstr "Inglés"
+msgstr ""

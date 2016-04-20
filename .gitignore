@@ -1,2 +1,11 @@
+# PYTHON
+*.pyc
+
 # DB
 db*
+
+# LOGS
+*.log
+
+# STATICS
+staticfiles/
