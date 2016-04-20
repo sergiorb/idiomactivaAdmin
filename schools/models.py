@@ -20,7 +20,7 @@ class School(models.Model):
 	added_on = models.DateTimeField(default=timezone.now, verbose_name=_('added on'))
 	info = models.TextField(blank=True, null=True, verbose_name=_('info'))
 	name = models.CharField(max_length=140, verbose_name=_('name'))
-	address = models.CharField(max_length=140, verbose_name=_('address'))
+	address = models.CharField(max_length=140, blank=True, null=True, verbose_name=_('address'))
 	city = models.CharField(max_length=140, verbose_name=_('city'))
 
 	def __unicode__(self):

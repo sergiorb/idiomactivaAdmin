@@ -11,7 +11,8 @@ class AdultAdmin(admin.ModelAdmin):
 		'name', 
 		'surname_a',
 		'surname_b',
-		'age',
+		#'age',
+		'born_date',
 		'address',
 		'phone',
 		'email',
@@ -28,10 +29,11 @@ class AdultAdmin(admin.ModelAdmin):
 		'surname_a',
 		'age',
 		'email',
+		'born_date',
 	)
 	
 	list_filter = (
-		'age',
+		#'age',
 	)
 
 	search_fields = (
@@ -42,11 +44,12 @@ class AdultAdmin(admin.ModelAdmin):
 
 class StudentAdmin(admin.ModelAdmin):
 
+
 	fields = (
 		'name', 
 		'surname_a',
 		'surname_b',
-		'age',
+		'born_date',
 		'address',
 		'phone',
 		'email',
@@ -64,17 +67,24 @@ class StudentAdmin(admin.ModelAdmin):
 	list_display = (
 		'name',
 		'surname_a',
+		'surname_b',
 		'age',
+		'born_date',
+		'phone',
+		'mobile',
 		'email',
+		'get_classes',
+		'get_adults',
 	)
 
 	list_filter = (
-		'age',
+		#'age',
 	)
 
 	search_fields = (
 		'name',
-		'surname_a'
+		'surname_a',
+		'surname_b',
 	)
 
 

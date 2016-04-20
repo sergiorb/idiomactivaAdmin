@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 import uuid
+from datetime import date
 
 from django.db import models
 from django.utils import timezone
@@ -21,15 +22,28 @@ class Person(models.Model):
 	name = models.CharField(max_length=140, verbose_name=_('name'))
 	surname_a = models.CharField(max_length=140, verbose_name=_('surname'))
 	surname_b = models.CharField(max_length=140, blank=True, null=True, verbose_name=_('surname b'))
-	age = models.PositiveIntegerField(default=0, verbose_name=_('age'))
+	born_date = models.DateField(null=True, verbose_name=_('date of birth'))
 	address = models.CharField(max_length=140, verbose_name=_('address'))
-	phone = models.CharField(max_length=140, verbose_name=_('phone'))
-	email = models.EmailField(max_length=254, verbose_name=_('email'))
+	phone = models.CharField(max_length=140, blank=True, null=True, verbose_name=_('phone'))
+	mobile = models.CharField(max_length=140, blank=True, null=True, verbose_name=_('mobile'))
+	email = models.EmailField(max_length=254, blank=True, null=True, verbose_name=_('email'))
 	info = models.TextField(blank=True, null=True, verbose_name=_('info'))
 	added_on = models.DateTimeField(default=timezone.now, verbose_name=_('added on'))
 
 	def __unicode__(self):
 		return '%s %s' % (self.name, self.surname_a)
+
+	def age(self):
+		# THANKS TO: http://stackoverflow.com/a/9754466
+
+		if self.born_date != None:
+
+			today = date.today()
+			return today.year - self.born_date.year - ((today.month, today.day) < (self.born_date.month, self.born_date.day))
+
+		else:
+			return None
+	age.short_description = _('age')
 
 
 class Adult(Person):
@@ -48,3 +62,11 @@ class Student(Person):
 	school = models.ForeignKey(School, related_name='students', blank=True, null=True, verbose_name=_('school'))
 	adults = models.ManyToManyField(Adult, related_name='students', blank=True, null=True, verbose_name=_('adults'))
 	classes = models.ManyToManyField(Class, related_name='students', blank=True, null=True, verbose_name=_('classes'))
+
+	def get_classes(self):
+		return " - ".join([str(p) for p in self.classes.all()])
+	get_classes.short_description = _('classes')
+
+	def get_adults(self):
+		return " - ".join([str(p) for p in self.adults.all()])
+	get_adults.short_description = _('adults')
