@@ -1,13 +1,16 @@
 from django.contrib import admin
 
+from import_export.admin import ImportExportModelAdmin, ExportMixin
+
 from .models import School
+from students.models import Student
 
 # Register your models here.
 
-class SchoolAdmin(admin.ModelAdmin):
+class SchoolAdmin(ExportMixin, admin.ModelAdmin):
 
 	fields = (
-		'name', 
+		'name',
 		'address',
 		'city',
 		'info',
@@ -22,6 +25,7 @@ class SchoolAdmin(admin.ModelAdmin):
 		'name',
 		'address',
 		'city',
+		'get_students',
 	)
 
 	list_filter = (
