@@ -1,20 +1,55 @@
 from django.contrib import admin
+from django import forms
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
+
+from import_export.admin import ImportExportModelAdmin, ExportMixin
 
 from .models import Adult, Student
+from classes.models import Class
+
 
 # Register your models here.
 
 
-class AdultAdmin(admin.ModelAdmin):
+class StudentForm(forms.ModelForm):
+
+	class Meta:
+		model = Student
+		exclude = ('id',)
+
+
+	def clean(self):
+		"""
+		Checks that all the words belong to the sentence's language.
+		"""
+
+		classes = self.cleaned_data.get('classes')
+
+		for a_class in classes:
+
+			class_obj = Class.objects.get(pk=a_class.id)
+			
+			if not self.instance in class_obj.students.all():
+			
+				if a_class.is_full():
+					raise ValidationError({
+						'classes': ValidationError(_('%(value)s is full!'), params={'value': class_obj}, code='fullclass')
+					})
+
+		return self.cleaned_data
+
+
+class AdultAdmin(ExportMixin, admin.ModelAdmin):
 
 	fields = (
-		'name', 
+		'name',
 		'surname_a',
 		'surname_b',
-		#'age',
 		'born_date',
 		'address',
 		'phone',
+		'mobile',
 		'email',
 		'info',
 		'added_on',
@@ -27,9 +62,13 @@ class AdultAdmin(admin.ModelAdmin):
 	list_display = (
 		'name',
 		'surname_a',
+		'surname_b',
 		'age',
-		'email',
 		'born_date',
+		'phone',
+		'mobile',
+		'email',
+		'get_students',
 	)
 	
 	list_filter = (
@@ -42,8 +81,9 @@ class AdultAdmin(admin.ModelAdmin):
 	)
 
 
-class StudentAdmin(admin.ModelAdmin):
+class StudentAdmin(ExportMixin, admin.ModelAdmin):
 
+	form = StudentForm
 
 	fields = (
 		'name', 
@@ -52,6 +92,7 @@ class StudentAdmin(admin.ModelAdmin):
 		'born_date',
 		'address',
 		'phone',
+		'mobile',
 		'email',
 		'info',
 		'school',
@@ -75,6 +116,7 @@ class StudentAdmin(admin.ModelAdmin):
 		'email',
 		'get_classes',
 		'get_adults',
+		'school',
 	)
 
 	list_filter = (

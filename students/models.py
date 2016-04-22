@@ -10,6 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 from schools.models import School
 from classes.models import Class
 
+
 # Create your models here.
 
 
@@ -52,14 +53,17 @@ class Adult(Person):
 		verbose_name = _('Adult')
 		verbose_name_plural = _('Adults')
 
+	def get_students(self):
+		return " - ".join([str(p).decode('utf-8') for p in self.students.all()])
+	get_students.short_description = _('students')
+
 
 class Student(Person):
 
 	class Meta:
 		verbose_name = _('Student')
 		verbose_name_plural = _('Students')
-
-	school = models.ForeignKey(School, related_name='students', blank=True, null=True, verbose_name=_('school'))
+	school = models.ForeignKey(School, on_delete=models.PROTECT, related_name='students', blank=True, null=True, verbose_name=_('school'))
 	adults = models.ManyToManyField(Adult, related_name='students', blank=True, null=True, verbose_name=_('adults'))
 	classes = models.ManyToManyField(Class, related_name='students', blank=True, null=True, verbose_name=_('classes'))
 

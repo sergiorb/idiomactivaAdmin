@@ -25,3 +25,7 @@ class School(models.Model):
 
 	def __unicode__(self):
 		return '%s - %s ' % (self.name, self.city)
+
+	def get_students(self):
+		return " - ".join([str(p).decode('utf-8') for p in self.students.all()])
+	get_students.short_description = _('students')
