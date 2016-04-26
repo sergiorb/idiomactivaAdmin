@@ -21,7 +21,7 @@ class StudentForm(forms.ModelForm):
 
 	def clean(self):
 		"""
-		Checks that all the words belong to the sentence's language.
+		Checks that the selected class is not full-.
 		"""
 
 		classes = self.cleaned_data.get('classes')
