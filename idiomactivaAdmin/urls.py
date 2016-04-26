@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""idiomactivaAdministration URL Configuration
+"""idiomactivaAdmin URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -17,9 +17,19 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from .admin import admin_site
 
-admin.site.site_header = 'Idiomactiva'
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^', admin.site.urls),
 ]
+
+url_password = [
+	url(r'^password_reset/$', auth_views.password_reset, name='admin_password_reset'),
+	url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+	url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', auth_views.password_reset_confirm, name='password_reset_confirm'),
+	url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
+]
+
+#urlpatterns += url_password

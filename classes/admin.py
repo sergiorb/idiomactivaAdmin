@@ -12,6 +12,7 @@ from students.models import Student
 
 
 class ClassForm(forms.ModelForm):
+
 	class Meta:
 		model = Class
 		exclude = ('id',)
@@ -56,9 +57,13 @@ class ClassForm(forms.ModelForm):
 
 
 class StudentshipInlineFormSet(BaseInlineFormSet):
+
 	def clean(self):
+
 		super(StudentshipInlineFormSet, self).clean()
+
 		adding_students = 0
+
 		for form in self.forms:
 			if not form.is_valid():
 				return #other errors exist, so don't bother
@@ -66,6 +71,7 @@ class StudentshipInlineFormSet(BaseInlineFormSet):
 				adding_students += 1
 
 		max_students = 0		
+		
 		for data in self.cleaned_data:
 			if data.get('class'):
 				max_students = data.get('class').max_students
@@ -77,7 +83,9 @@ class StudentshipInlineFormSet(BaseInlineFormSet):
 				code='invalid-number')
 			)
 
+
 class StudentshipInline(admin.TabularInline):
+
 	model = Student.classes.through
 	formset = StudentshipInlineFormSet
 

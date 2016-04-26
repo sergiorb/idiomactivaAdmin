@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-20 18:28+0200\n"
+"POT-Creation-Date: 2016-04-26 10:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: classes/admin.py:26
+msgid "Max students has to be equal or greater than current assigned students"
+msgstr ""
+
+#: classes/admin.py:76
+msgid "There is not enough space in this class!!"
+msgstr ""
 
 #: classes/models.py:16
 msgid "Class"
@@ -25,15 +33,31 @@ msgstr ""
 msgid "Classes"
 msgstr ""
 
-#: classes/models.py:20 schools/models.py:22 students/models.py:22
+#: classes/models.py:20 schools/models.py:22 students/models.py:23
 msgid "name"
 msgstr ""
 
-#: classes/models.py:27
+#: classes/models.py:21
+msgid "max students"
+msgstr ""
+
+#: classes/models.py:32 schools/models.py:31 students/models.py:58
 msgid "students"
 msgstr ""
 
-#: idiomactivaAdministration/settings.py:115
+#: classes/models.py:39
+msgid "is full?"
+msgstr ""
+
+#: classes/models.py:47
+msgid "available"
+msgstr ""
+
+#: classes/models.py:52
+msgid "capacity"
+msgstr ""
+
+#: idiomactivaAdmin/settings.py:119
 msgid "Spanish"
 msgstr ""
 
@@ -45,15 +69,15 @@ msgstr ""
 msgid "Schools"
 msgstr ""
 
-#: schools/models.py:20 students/models.py:31
+#: schools/models.py:20 students/models.py:32
 msgid "added on"
 msgstr ""
 
-#: schools/models.py:21 students/models.py:30
+#: schools/models.py:21 students/models.py:31
 msgid "info"
 msgstr ""
 
-#: schools/models.py:23 students/models.py:26
+#: schools/models.py:23 students/models.py:27
 msgid "address"
 msgstr ""
 
@@ -61,58 +85,67 @@ msgstr ""
 msgid "city"
 msgstr ""
 
-#: students/models.py:23
-msgid "surname"
+#: students/admin.py:37
+#, python-format
+msgid "%(value)s is full!"
 msgstr ""
 
 #: students/models.py:24
-msgid "surname b"
+msgid "surname"
 msgstr ""
 
 #: students/models.py:25
+msgid "surname b"
+msgstr ""
+
+#: students/models.py:26
 msgid "date of birth"
 msgstr ""
 
-#: students/models.py:27
+#: students/models.py:28
 msgid "phone"
 msgstr ""
 
-#: students/models.py:28
+#: students/models.py:29
 msgid "mobile"
 msgstr ""
 
-#: students/models.py:29
+#: students/models.py:30
 msgid "email"
 msgstr ""
 
-#: students/models.py:46
+#: students/models.py:47
 msgid "age"
 msgstr ""
 
-#: students/models.py:52
+#: students/models.py:53
 msgid "Adult"
 msgstr ""
 
-#: students/models.py:53
+#: students/models.py:54
 msgid "Adults"
 msgstr ""
 
-#: students/models.py:59
+#: students/models.py:64
 msgid "Student"
 msgstr ""
 
-#: students/models.py:60
+#: students/models.py:65
 msgid "Students"
 msgstr ""
 
-#: students/models.py:62
+#: students/models.py:66
 msgid "school"
 msgstr ""
 
-#: students/models.py:63
+#: students/models.py:67 students/models.py:76
 msgid "adults"
 msgstr ""
 
-#: students/models.py:64 students/models.py:69
+#: students/models.py:68 students/models.py:72
 msgid "classes"
+msgstr ""
+
+#: templates/admin/classes/app_index.html:9
+msgid "Home"
 msgstr ""

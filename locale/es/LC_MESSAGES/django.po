@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 18:19+0200\n"
+"POT-Creation-Date: 2016-04-26 10:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "disponible"
 msgid "capacity"
 msgstr "capacidad"
 
-#: idiomactivaAdministration/settings.py:117
+#: idiomactivaAdmin/settings.py:119
 msgid "Spanish"
 msgstr "Español"
 
@@ -88,6 +88,7 @@ msgid "city"
 msgstr "ciudad"
 
 #: students/admin.py:37
+#, python-format
 msgid "%(value)s is full!"
 msgstr "¡%(value)s esta llena!"
 
@@ -146,6 +147,10 @@ msgstr "adultos"
 #: students/models.py:68 students/models.py:72
 msgid "classes"
 msgstr "clases"
+
+#: templates/admin/classes/app_index.html:9
+msgid "Home"
+msgstr ""
 
 #~ msgid "English"
 #~ msgstr "Inglés"
